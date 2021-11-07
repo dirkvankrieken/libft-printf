@@ -31,7 +31,7 @@ typedef struct s_convert
 	int				i;
 	unsigned int	u;
 	unsigned int	x;
-	unsigned int	X;
+	unsigned int	uc_x;
 	int				x_int;
 }	t_convert;
 
