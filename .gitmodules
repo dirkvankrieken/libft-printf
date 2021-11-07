@@ -1,0 +1,3 @@
+[submodule "srcs/srcs/libft"]
+	path = srcs/srcs/libft
+	url = https://github.com/dirkvankrieken/libft.git
