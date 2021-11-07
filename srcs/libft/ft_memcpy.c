@@ -6,11 +6,11 @@
 /*   By: dvan-kri <dvan-kri@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/07 15:54:36 by dvan-kri      #+#    #+#                 */
-/*   Updated: 2021/05/19 11:04:43 by dvan-kri      ########   odam.nl         */
+/*   Updated: 2021/08/13 10:45:40 by dvan-kri      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "includes/libft.h"
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {

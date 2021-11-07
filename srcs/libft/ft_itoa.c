@@ -6,11 +6,11 @@
 /*   By: dvan-kri <dvan-kri@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/20 11:36:48 by dvan-kri      #+#    #+#                 */
-/*   Updated: 2021/05/19 10:54:32 by dvan-kri      ########   odam.nl         */
+/*   Updated: 2021/08/13 10:45:40 by dvan-kri      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "includes/libft.h"
 
 int	numberofchars(int n)
 {

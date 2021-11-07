@@ -6,11 +6,11 @@
 /*   By: dvan-kri <dvan-kri@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/07 15:39:09 by dvan-kri      #+#    #+#                 */
-/*   Updated: 2020/11/30 10:42:07 by dvan-kri      ########   odam.nl         */
+/*   Updated: 2021/08/13 10:45:40 by dvan-kri      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "includes/libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {

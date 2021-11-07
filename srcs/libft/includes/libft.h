@@ -6,7 +6,7 @@
 /*   By: dvan-kri <dvan-kri@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/21 15:58:28 by dvan-kri      #+#    #+#                 */
-/*   Updated: 2021/06/10 14:03:27 by dvan-kri      ########   odam.nl         */
+/*   Updated: 2021/10/20 11:29:40 by dvan-kri      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define LIBFT_H
 
 # include <stdlib.h>
-# include <unistd.h>
 
 typedef struct s_list
 {

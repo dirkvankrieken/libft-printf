@@ -6,11 +6,11 @@
 /*   By: dvan-kri <dvan-kri@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/17 15:19:52 by dvan-kri      #+#    #+#                 */
-/*   Updated: 2021/05/19 11:01:57 by dvan-kri      ########   odam.nl         */
+/*   Updated: 2021/08/13 10:45:40 by dvan-kri      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "includes/libft.h"
 
 static char	**clear_split(char **arr)
 {
