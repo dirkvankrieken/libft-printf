@@ -1,4 +1,4 @@
-#******************************************************************************#
+# **************************************************************************** #
 #                                                                              #
 #                                                         ::::::::             #
 #    Makefile                                           :+:    :+:             #
@@ -6,40 +6,56 @@
 #    By: dvan-kri <dvan-kri@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/05/27 22:20:58 by dvan-kri      #+#    #+#                  #
-#    Updated: 2021/06/02 10:19:30 by dvan-kri      ########   odam.nl          #
+#    Updated: 2021/10/29 12:47:19 by dvan-kri      ########   odam.nl          #
 #                                                                              #
-#******************************************************************************#
+# **************************************************************************** #
 
-NAME =		libftprintf.a
+NAME =			libft.a
 
 #---------------------- DIRECTORIES ------------------#
-SRC_DIR =	srcs
-HDR_DIR =	includes
-OBJ_DIR =	obj
-LIBFT_DIR = 	srcs/libft
+HDR_DIR =		includes/
+OBJ_DIR =		objs/
+SRC_DIR =		srcs/
+PRINTF_DIR =	ft_printf/
+GNL_DIR =		gnl/
 
-#---------------------- SOURCES ----------------------#
-SRCS =		srcs/ft_printf.c \
-		srcs/pf_checkfunctions.c \
-		srcs/pf_checkfunctions_precision.c \
-		srcs/pf_ultohex.c \
-		srcs/pf_putfunctions.c \
-		srcs/pf_putc.c \
-		srcs/puts/pf_puts.c \
-		srcs/puts/pf_puts_width.c \
-		srcs/putd/pf_putd.c \
-		srcs/putd/pf_putd_minus.c \
-		srcs/putd/pf_putd_zero.c \
-		srcs/pf_putp.c \
-		srcs/putu/pf_putu.c \
-		srcs/putu/pf_putu_minus.c \
-		srcs/putu/pf_putu_zero.c \
-		srcs/putx/pf_putx.c \
-		srcs/putx/pf_putx_precision.c \
-		srcs/putx/pf_putx_minus.c \
+#---------------------- FILENAMES ----------------------#
+PRINTF_FILES =	ft_printf/ft_printf.c \
+				ft_printf/pf_checkfunctions.c \
+				ft_printf/pf_checkfunctions_precision.c \
+				ft_printf/pf_ultohex.c \
+				ft_printf/pf_putfunctions.c \
+				ft_printf/pf_putc.c \
+				ft_printf/puts/pf_puts.c \
+				ft_printf/puts/pf_puts_width.c \
+				ft_printf/putd/pf_putd.c \
+				ft_printf/putd/pf_putd_minus.c \
+				ft_printf/putd/pf_putd_zero.c \
+				ft_printf/pf_putp.c \
+				ft_printf/putu/pf_putu.c \
+				ft_printf/putu/pf_putu_minus.c \
+				ft_printf/putu/pf_putu_zero.c \
+				ft_printf/putx/pf_putx.c \
+				ft_printf/putx/pf_putx_precision.c \
+				ft_printf/putx/pf_putx_minus.c \
+
+LIBFT_FILES = 	ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c \
+				ft_memmove.c ft_memchr.c ft_memcmp.c ft_strlen.c ft_strlcpy.c \
+				ft_strlcat.c ft_tolower.c ft_toupper.c ft_isalnum.c ft_isalpha.c \
+				ft_isascii.c ft_isdigit.c ft_isprint.c ft_strchr.c ft_strncmp.c \
+				ft_strrchr.c ft_strnstr.c ft_atoi.c ft_calloc.c ft_strdup.c ft_substr.c \
+				ft_strjoin.c ft_strtrim.c ft_split.c ft_itoa.c ft_strmapi.c ft_putchar_fd.c \
+				ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c ft_intcountchars.c ft_putuint_fd.c \
+				ft_uintcountchars.c ft_intcountnumbers.c \
+				ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
+				ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
+
+GNL_FILES =		get_next_line.c get_next_line_utils.c
 
 #---------------------- OBJECTS ----------------------#
-OBJS =		$(SRCS:.c=.o)
+PRINTF_OBJS =		$(addprefix $(SRC_DIR), $(PRINTF_FILES:.c=.o))
+LIBFT_OBJS =		$(addprefix $(SRC_DIR), $(LIBFT_FILES:.c=.o)) $(addprefix $(SRC_DIR), $(LIBFT_BONUS_SRCS:.c=.o))
+GNL_OBJS =			$(addprefix $(SRC_DIR), $(GNL_FILES:.c=.o))
 
 #---------------------- FLAGS ------------------------#
 C_FLAGS =	-Werror -Wextra -Wall
@@ -47,27 +63,19 @@ C_FLAGS =	-Werror -Wextra -Wall
 #---------------------- RULES ------------------------#
 all: $(NAME)
 
-test: $(NAME)
-	$(CC) -g main.c $<
-	./a.out
-
-$(NAME): $(OBJS)
-	make -C $(LIBFT_DIR)
-	cp srcs/libft/libft.a ./$(NAME)
-	ar rcs $@ $(OBJS)
+$(NAME): $(PRINTF_OBJS) $(LIBFT_OBJS) $(GNL_OBJS)
+	ar rcs $@ $(PRINTF_OBJS) $(LIBFT_OBJS) $(GNL_OBJS)
 	ranlib $@
 
 $(SRC_DIR)/%.o: $(SRC_DIR)/%.c
 	$(CC) -c $(C_FLAGS) -o $@ $<
 
 clean:
-	rm -rf $(OBJS)
-	make -C $(LIBFT_DIR) clean
+	rm -rf $(PRINTF_OBJS) $(LIBFT_OBJS) $(GNL_OBJS)
 
 fclean: clean
 	rm -rf $(NAME)
-	make -C $(LIBFT_DIR) fclean
 
 re: fclean all
 
-.PHONY: all test testwithflags clean fclean re
+.PHONY: all clean fclean re
