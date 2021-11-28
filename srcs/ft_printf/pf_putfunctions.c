@@ -6,13 +6,12 @@
 /*   By: dvan-kri <dvan-kri@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/05/27 22:19:23 by dvan-kri      #+#    #+#                 */
-/*   Updated: 2021/06/17 14:42:12 by dvan-kri      ########   odam.nl         */
+/*   Updated: 2021/11/28 18:35:39 by dvan-kri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/ft_printf.h"
 #include "../../includes/libft.h"
-
 
 void	pf_putconversion(t_convert *p)
 {
